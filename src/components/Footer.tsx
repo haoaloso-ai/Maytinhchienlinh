@@ -24,10 +24,10 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap justify-start gap-4 sm:gap-8">
               {[
-                { name: 'Facebook', src: '/src/assets/images/regenerated_image_1778139501851.jpg', url: 'https://www.facebook.com/share/18ce4dDCQF/' },
-                { name: 'Zalo', src: '/src/assets/images/regenerated_image_1778139498203.jpg', url: 'https://zalo.me/0373545903' },
-                { name: 'TikTok', src: '/src/assets/images/regenerated_image_1778139498972.jpg', url: 'https://www.tiktok.com/@user55366205701676?_r=1&_t=ZS-96B0Pfvd95l' },
-                { name: 'Messenger', src: '/src/assets/images/regenerated_image_1778139499883.png', url: 'https://m.me/nguyen.xuan.hao.908802?hash=Abad6JrrkGVHdrJG&source=qr' }
+                { name: 'Facebook', src: '/images/regenerated_image_1778139501851.jpg', url: 'https://www.facebook.com/share/18ce4dDCQF/' },
+                { name: 'Zalo', src: '/images/regenerated_image_1778139498203.jpg', url: 'https://zalo.me/0373545903' },
+                { name: 'TikTok', src: '/images/regenerated_image_1778139498972.jpg', url: 'https://www.tiktok.com/@user55366205701676?_r=1&_t=ZS-96B0Pfvd95l' },
+                { name: 'Messenger', src: '/images/regenerated_image_1778139499883.png', url: 'https://m.me/nguyen.xuan.hao.908802?hash=Abad6JrrkGVHdrJG&source=qr' }
               ].map((social, idx) => (
                 <a 
                   key={idx} 

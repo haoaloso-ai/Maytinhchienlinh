@@ -4,17 +4,17 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const PARTNERS = [
-  { name: 'Imou', logo: '/src/assets/images/regenerated_image_1778053282409.png' },
-  { name: 'Hikvision', logo: '/src/assets/images/regenerated_image_1778053283146.png' },
-  { name: 'HP', logo: '/src/assets/images/regenerated_image_1778127170837.png' },
-  { name: 'Dell', logo: '/src/assets/images/regenerated_image_1778053642908.png' },
-  { name: 'Asus', logo: '/src/assets/images/regenerated_image_1778053643663.png' },
-  { name: 'Huawei', logo: '/src/assets/images/regenerated_image_1778127172126.png' },
-  { name: 'TP-Link', logo: '/src/assets/images/regenerated_image_1778053918944.png' },
-  { name: 'Ezviz', logo: '/src/assets/images/regenerated_image_1778137300305.png' },
-  { name: 'Dahua', logo: '/src/assets/images/regenerated_image_1778137301107.png' },
-  { name: 'Gigabyte', logo: '/src/assets/images/regenerated_image_1778137590884.png' },
-  { name: 'Netis', logo: '/src/assets/images/regenerated_image_1778137591793.png' },
+  { name: 'Imou', logo: '/images/regenerated_image_1778053282409.png' },
+  { name: 'Hikvision', logo: '/images/regenerated_image_1778053283146.png' },
+  { name: 'HP', logo: '/images/regenerated_image_1778127170837.png' },
+  { name: 'Dell', logo: '/images/regenerated_image_1778053642908.png' },
+  { name: 'Asus', logo: '/images/regenerated_image_1778053643663.png' },
+  { name: 'Huawei', logo: '/images/regenerated_image_1778127172126.png' },
+  { name: 'TP-Link', logo: '/images/regenerated_image_1778053918944.png' },
+  { name: 'Ezviz', logo: '/images/regenerated_image_1778137300305.png' },
+  { name: 'Dahua', logo: '/images/regenerated_image_1778137301107.png' },
+  { name: 'Gigabyte', logo: '/images/regenerated_image_1778137590884.png' },
+  { name: 'Netis', logo: '/images/regenerated_image_1778137591793.png' },
 ];
 
 export default function Partners() {

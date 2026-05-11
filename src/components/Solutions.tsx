@@ -16,7 +16,7 @@ export default function Solutions() {
       icon: <Camera className="w-10 h-10" />,
       title: t('nav.solutions.camera'),
       desc: t('nav.solutions.camera.desc'),
-      image: '/regenerated_image_1777391093063.png',
+      image: '/images/regenerated_image_1777391093063.png',
       color: 'gold'
     },
     {
@@ -30,14 +30,14 @@ export default function Solutions() {
       icon: <Monitor className="w-10 h-10" />,
       title: t('nav.solutions.office'),
       desc: t('nav.solutions.office.desc'),
-      image: '/src/assets/images/regenerated_image_1778033026197.jpg',
+      image: '/images/regenerated_image_1778033026197.jpg',
       color: 'white'
     },
     {
       icon: <Server className="w-10 h-10" />,
       title: t('nav.solutions.server'),
       desc: t('nav.solutions.server.desc'),
-      image: '/src/assets/images/regenerated_image_1778033028064.jpg',
+      image: '/images/regenerated_image_1778033028064.jpg',
       color: 'white'
     }
   ];

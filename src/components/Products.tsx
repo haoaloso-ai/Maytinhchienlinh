@@ -7,22 +7,22 @@ const PRODUCTS = [
   {
     name: 'Camera WiFi Ngoài Trời Imou Cruiser 2 5MP',
     brand: 'IMOU',
-    image: '/src/assets/images/regenerated_image_1778052104259.jpg',
+    image: '/images/regenerated_image_1778052104259.jpg',
   },
   {
     name: 'Camera IP Hồng Ngoại Hikvision 2MP',
     brand: 'HIKVISION',
-    image: '/src/assets/images/regenerated_image_1778052105728.webp',
+    image: '/images/regenerated_image_1778052105728.webp',
   },
   {
     name: 'Đầu Ghi Hình NVR Hikvision 8 Kênh 4K',
     brand: 'HIKVISION',
-    image: '/src/assets/images/regenerated_image_1778034127820.jpg',
+    image: '/images/regenerated_image_1778034127820.jpg',
   },
   {
     name: 'Laptop HP EliteBook 840 G10 i7',
     brand: 'HP',
-    image: '/src/assets/images/regenerated_image_1778052107467.webp',
+    image: '/images/regenerated_image_1778052107467.webp',
   },
   {
     name: 'Laptop Dell XPS 15 9530 i9 2023',
@@ -32,22 +32,22 @@ const PRODUCTS = [
   {
     name: 'Thiết Bị Wifi 6 TP-Link Archer AX73',
     brand: 'TP-LINK',
-    image: '/src/assets/images/regenerated_image_1778052696459.png',
+    image: '/images/regenerated_image_1778052696459.png',
   },
   {
     name: 'Máy In Laser Brother HL-L2366DW',
     brand: 'BROTHER',
-    image: '/src/assets/images/regenerated_image_1778052700673.png',
+    image: '/images/regenerated_image_1778052700673.png',
   },
   {
     name: 'Máy In Phun Màu Canon PIXMA G3010',
     brand: 'CANON',
-    image: '/src/assets/images/regenerated_image_1778052703848.png',
+    image: '/images/regenerated_image_1778052703848.png',
   },
   {
     name: 'HP GAMING VICTUS 16 RYZEN 5 6600H',
     brand: 'HP',
-    image: '/src/assets/images/regenerated_image_1778052705785.png',
+    image: '/images/regenerated_image_1778052705785.png',
   }
 ];
 
