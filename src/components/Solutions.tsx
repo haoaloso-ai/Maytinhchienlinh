@@ -1,38 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Camera, Monitor, Server, Wifi, ArrowRight, X, Phone, Mail, Facebook, MessageCircle, Trash2 } from 'lucide-react';
+import { Camera, Monitor, Server, Wifi, ArrowRight, X, Phone, Mail, Facebook, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useModal } from '../contexts/ModalContext';
-import { useContacts } from '../contexts/ContactContext';
-import InboxModal from './InboxModal';
-import AdminLoginModal from './AdminLoginModal';
 
 export default function Solutions() {
   const { t } = useLanguage();
   const { 
     isContactModalOpen, 
-    setIsContactModalOpen, 
-    isQuoteModalOpen, 
-    setIsQuoteModalOpen,
-    isInboxModalOpen,
-    setIsInboxModalOpen
+    setIsContactModalOpen
   } = useModal();
-  const { addMessage } = useContacts();
-
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    content: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    addMessage(formData.name, formData.phone, formData.content);
-    setFormData({ name: '', phone: '', content: '' });
-    setIsQuoteModalOpen(false);
-    // Success feedback could be added here
-    alert('Cảm ơn bạn! Thông tin đã được gửi thành công.');
-  };
 
   const SOLUTIONS = [
     {
@@ -116,7 +93,7 @@ export default function Solutions() {
                 <p className="text-white/60 leading-relaxed mb-2 lg:mb-8 text-[10px] lg:text-sm line-clamp-2 lg:line-clamp-none">
                   {item.desc}
                 </p>
-                <div className="flex items-center gap-1 lg:gap-2 text-gold text-[8px] lg:text-xs font-bold uppercase tracking-[0.1em] lg:tracking-[0.2em] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all">
+                <div className="hidden lg:flex items-center gap-1 lg:gap-2 text-gold text-[8px] lg:text-xs font-bold uppercase tracking-[0.1em] lg:tracking-[0.2em] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all">
                   {t('hero.cta')} <ArrowRight size={12} className="lg:w-[14px] lg:h-[14px]" />
                 </div>
               </div>
@@ -140,16 +117,10 @@ export default function Solutions() {
               {t('solutions.cta.desc')}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
-            <button 
-              onClick={() => setIsQuoteModalOpen(true)}
-              className="w-full bg-gold text-navy px-6 py-4 font-bold text-xs lg:text-sm uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-gold/20 flex items-center justify-center gap-2 whitespace-nowrap"
-            >
-              {t('solutions.cta.button').toUpperCase()}
-            </button>
+          <div className="grid grid-cols-1 md:w-auto">
             <button 
               onClick={() => setIsContactModalOpen(true)}
-              className="w-full bg-gold text-navy px-6 py-4 font-bold text-xs lg:text-sm uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-gold/20 flex items-center justify-center gap-2 whitespace-nowrap"
+              className="w-full bg-gold text-navy px-12 py-4 font-bold text-xs lg:text-sm uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-gold/20 flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {t('solutions.hotline').toUpperCase()}
             </button>
@@ -258,93 +229,6 @@ export default function Solutions() {
           </div>
         )}
       </AnimatePresence>
-      {/* Quote/Consultation Request Modal */}
-      <AnimatePresence>
-        {isQuoteModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsQuoteModalOpen(false)}
-              className="absolute inset-0 bg-navy/95 backdrop-blur-md"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg bg-navy-dark border border-gold/30 rounded-sm shadow-2xl overflow-hidden flex flex-col max-h-[85vh]"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gold z-20"></div>
-              <button 
-                onClick={() => setIsQuoteModalOpen(false)}
-                className="absolute top-4 right-4 text-white/40 hover:text-gold transition-colors z-20"
-              >
-                <X size={24} />
-              </button>
-
-              <div className="overflow-y-auto p-6 md:p-12">
-                <div className="text-center mb-6 md:mb-8 mt-4 md:mt-0">
-                  <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase mb-2 block">Liên Hệ Tư Vấn</span>
-                  <h3 className="text-xl md:text-2xl font-bold uppercase tracking-widest text-white mb-3 md:mb-4">Để Lại Thông Tin</h3>
-                  <p className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest leading-relaxed">
-                    Chúng tôi sẽ liên hệ cho bạn
-                  </p>
-                </div>
-
-                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                  <div className="space-y-3 md:space-y-4">
-                    <div>
-                      <label className="block text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gold mb-1.5 md:mb-2">Họ và Tên</label>
-                      <input 
-                        type="text" 
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 px-3 md:px-4 py-2.5 md:py-3 text-white focus:outline-none focus:border-gold/50 transition-colors uppercase text-xs md:text-sm tracking-wider"
-                        placeholder="NHẬP HỌ TÊN CỦA BẠN"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gold mb-1.5 md:mb-2">Số Điện Thoại Liên Lạc</label>
-                      <input 
-                        type="tel" 
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 px-3 md:px-4 py-2.5 md:py-3 text-white focus:outline-none focus:border-gold/50 transition-colors uppercase text-xs md:text-sm tracking-wider"
-                        placeholder="NHẬP SỐ ĐIỆN THOẠI"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gold mb-1.5 md:mb-2">Nội Dung Cần Tư Vấn</label>
-                      <textarea 
-                        rows={3}
-                        required
-                        value={formData.content}
-                        onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 px-3 md:px-4 py-2.5 md:py-3 text-white focus:outline-none focus:border-gold/50 transition-colors uppercase text-xs md:text-sm tracking-wider resize-none"
-                        placeholder="MÔ TẢ CHI TIẾT NHU CẦU CỦA BẠN"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 md:pt-4">
-                    <button 
-                      type="submit"
-                      className="w-full bg-gold text-navy font-black text-xs md:text-sm py-3.5 md:py-4 uppercase tracking-[0.3em] hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/10"
-                    >
-                      GỬI
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-      <InboxModal />
-      <AdminLoginModal />
     </section>
   );
 }

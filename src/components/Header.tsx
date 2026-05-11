@@ -1,11 +1,9 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Phone, Globe, User, Mail } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, Globe, User } from 'lucide-react';
 import { useState } from 'react';
 import Logo from './Logo';
 import { useLanguage, Language } from '../contexts/LanguageContext';
 import { useModal } from '../contexts/ModalContext';
-import { useContacts } from '../contexts/ContactContext';
-import { useAuth } from '../contexts/AuthContext';
 
 const MENU_ITEMS = [
   {
@@ -33,18 +31,7 @@ export default function Header() {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const { language, setLanguage, t } = useLanguage();
   const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const { setIsContactModalOpen, setIsInboxModalOpen, setIsAdminLoginModalOpen } = useModal();
-  const { hasUnread, markAllAsRead } = useContacts();
-  const { isAdmin } = useAuth();
-
-  const handleOpenInbox = () => {
-    if (isAdmin) {
-      setIsInboxModalOpen(true);
-      markAllAsRead();
-    } else {
-      setIsAdminLoginModalOpen(true);
-    }
-  };
+  const { setIsContactModalOpen } = useModal();
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-navy text-white border-b border-gold/30">
@@ -159,16 +146,6 @@ export default function Header() {
                 </div>
               )}
           </div>
-
-          <button 
-            onClick={handleOpenInbox}
-            className="p-2 text-white hover:text-gold transition-colors relative"
-          >
-            <Mail size={22} />
-            {hasUnread && (
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-navy shadow-lg animate-pulse" />
-            )}
-          </button>
 
           <button 
             onClick={() => setIsContactModalOpen(true)}
