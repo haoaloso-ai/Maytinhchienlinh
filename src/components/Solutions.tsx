@@ -171,9 +171,9 @@ export default function Solutions() {
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-0.5 md:mb-1">Hotline Tư Vấn</p>
                       <div className="text-base md:text-lg font-bold text-white tracking-widest leading-tight">
-                        <p>0373 545 903</p>
-                        <p>0888 545 903</p>
-                        <p>0937 118 586</p>
+                        <p>0373.545.903</p>
+                        <p>093.711.8586</p>
+                        <p>088.911.8586</p>
                       </div>
                     </div>
                   </a>
