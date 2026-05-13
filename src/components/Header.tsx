@@ -38,7 +38,7 @@ export default function Header() {
       {/* Top Bar */}
       <div className="hidden lg:flex justify-between items-center px-8 py-2 border-b border-white/5 text-xs font-bold uppercase tracking-[0.1em]">
         <div className="flex gap-8">
-          <span className="flex items-center gap-2"><Phone size={15} className="text-gold" /> Hotline: 0373 545 903 - 0888 545 903 - 0937 118 586</span>
+          <span className="flex items-center gap-2"><Phone size={15} className="text-gold" /> Hotline: 0373.545.903 - 093.711.8586 - 088.911.8586</span>
           <div className="relative">
             <button 
               onClick={() => setLangMenuOpen(!langMenuOpen)}

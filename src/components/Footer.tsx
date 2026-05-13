@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="text-gold shrink-0" size={20} />
-                <span> Hotline: 0373 545 903 - 0888 545 903 - 0937 118 586</span>
+                <span> Hotline: 0373.545.903 - 093.711.8586 - 088.911.8586</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="text-gold font-bold text-xs">MST:</span>
